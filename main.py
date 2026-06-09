@@ -1,11 +1,19 @@
-# Import functions from task_manager.task_utils package
-from task_manager.task_utils import (
-    add_task,
-    mark_task_as_complete,
-    view_pending_tasks,
-    calculate_progress,
-    tasks
-)
+try:
+    from task_manager.task_utils import (
+        add_task,
+        mark_task_as_complete,
+        view_pending_tasks,
+        calculate_progress,
+        tasks,
+    )
+except ModuleNotFoundError:
+    from task_utils import (
+        add_task,
+        mark_task_as_complete,
+        view_pending_tasks,
+        calculate_progress,
+        tasks,
+    )
 
 # Define the main function
 def main():
