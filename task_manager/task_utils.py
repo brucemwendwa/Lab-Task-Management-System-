@@ -11,13 +11,12 @@ tasks = []
 
 # Implement add_task function
 def add_task(title, description, due_date):
-    if not validate_task_title(title):
-        return False
-
-    if not validate_task_description(description):
-        return False
-
-    if not validate_due_date(due_date):
+    try:
+        validate_task_title(title)
+        validate_task_description(description)
+        validate_due_date(due_date)
+    except ValueError as error:
+        print(f"Error: {error}")
         return False
 
     task = {
