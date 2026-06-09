@@ -5,7 +5,9 @@ def validate_task_title(title):
     if title is None:
         raise ValueError("Task title cannot be empty.")
 
-    if len(title.strip()) == 0:
+    title = title.strip()
+
+    if len(title) == 0:
         raise ValueError("Task title cannot be empty.")
 
     return True
@@ -15,7 +17,9 @@ def validate_task_description(description):
     if description is None:
         raise ValueError("Task description cannot be empty.")
 
-    if len(description.strip()) == 0:
+    description = description.strip()
+
+    if len(description) == 0:
         raise ValueError("Task description cannot be empty.")
 
     return True
